@@ -55,16 +55,18 @@ class GameScene: SKScene {
 
     // Configura física do mundo para ter bordas quicantes
     func setBouncyBoundaries() {
-        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        let bouncyBody: SKPhysicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
 
-        self.physicsBody?.mass = 100
-        self.physicsBody?.restitution = 1.0
-        self.physicsBody?.friction = 0.0
-        self.physicsBody?.isDynamic = false
-        self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.allowsRotation = false
-        self.physicsBody?.angularDamping = 0.0
-        self.physicsBody?.linearDamping = 0.0
-        self.physicsBody?.isResting = true
+        bouncyBody.mass = 100
+        bouncyBody.restitution = 1.0
+        bouncyBody.friction = 0.0
+        bouncyBody.isDynamic = false
+        bouncyBody.affectedByGravity = false
+        bouncyBody.allowsRotation = false
+        bouncyBody.angularDamping = 0.0
+        bouncyBody.linearDamping = 0.0
+        bouncyBody.isResting = true
+        
+        self.physicsBody = bouncyBody
     }
 }
